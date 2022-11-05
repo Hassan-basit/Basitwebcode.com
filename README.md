@@ -1,2 +1,2 @@
-# Basitwebcode
-This is a free website for coding
+Make measurable progress in reasonable time 
+introduction to learning html and css
