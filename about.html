@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Bsecurity</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-nav">
+      <div class="logo">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+          <defs>
+            <linearGradient id="shieldGradient" x1="0" y1="0" x2="0" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#2196f3"/>
+              <stop offset="1" stop-color="#1565c0"/>
+            </linearGradient>
+          </defs>
+          <path d="M40 7L70 17V37C70 57 40 73 40 73C40 73 10 57 10 37V17L40 7Z" fill="url(#shieldGradient)"/>
+          <rect x="28" y="38" width="24" height="18" rx="5" fill="#fff"/>
+          <rect x="33" y="31" width="14" height="10" rx="5" fill="none" stroke="#fff" stroke-width="3"/>
+          <circle cx="40" cy="47" r="2" fill="#2196f3"/>
+        </svg>
+        <span class="brand">Bsecurity</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Courses</a>
+          <div class="dropdown-content">
+            <a href="HTML.html">HTML Course (Free)</a>
+            <a href="CSS.html">CSS Course (Free)</a>
+            <a href="https://baskapella.blogspot.com">Ethical Hacking Blog</a>
+          </div>
+        </li>
+        <li class="about-dropdown">
+          <a href="about.html" class="active">About Us</a>
+          <div class="about-dropdown-content">
+            <a href="team.html">Our Team</a>
+            <a href="who.html">Who We Are</a>
+          </div>
+        </li>
+        <li><a href="demo.html">Demo</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  <section class="about-hero">
+    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=900&q=80" alt="About Bsecurity" class="about-hero-img"/>
+    <h1 class="about-title">About <span style="color:#00BFFF;">Bsecurity</span></h1>
+  </section>
+  <section class="about-writeup">
+    <h2>The Full Story</h2>
+    <p>
+      <strong>About Bsecurity</strong><br>
+      In today’s fast-evolving world, access to quality cybersecurity mentorship, career guidance, and skill development is more important than ever. At Bsecurity, we believe in breaking barriers and transforming careers, equipping individuals with the tools they need to achieve their full potential in highly competitive industries.
+    </p>
+    <p>
+      Bsecurity was founded out of a passion for resilience and digital empowerment—one that highlights the struggles of breaking into the workforce, overcoming barriers, and navigating career transitions. Our mission is to empower individuals, especially those from underrepresented backgrounds, with the skills, mentorship, and confidence to build sustainable, thriving careers in cybersecurity and IT.
+    </p>
+    <div class="about-gallery">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Teamwork"/>
+      <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Training"/>
+      <img src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=400&q=80" alt="Mentorship"/>
+    </div>
+  </section>
+  <section class="mission-vision">
+    <div class="mission">
+      <h2>Our Mission</h2>
+      <p>
+        To empower individuals with practical cybersecurity and IT skills, mentorship, and confidence to build sustainable, thriving careers and protect the digital world.
+      </p>
+    </div>
+    <div class="vision">
+      <h2>Our Vision</h2>
+      <p>
+        To be the leading platform for accessible, hands-on cybersecurity education and career transformation, fostering a global community of ethical hackers and IT professionals.
+      </p>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Bsecurity. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function setupDropdown(btnSelector) {
+        document.querySelectorAll(btnSelector).forEach(btn => {
+          const dropdown = btn.nextElementSibling;
+          btn.addEventListener('click', function(e) {
+            const isOpen = dropdown.style.display === 'block';
+            if (!isOpen) {
+              e.preventDefault();
+              document.querySelectorAll('.dropdown-content, .about-dropdown-content').forEach(d => d.style.display = 'none');
+              dropdown.style.display = 'block';
+            }
+          });
+        });
+      }
+      setupDropdown('.dropdown > a');
+      setupDropdown('.about-dropdown > a');
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown') && !e.target.closest('.about-dropdown')) {
+          document.querySelectorAll('.dropdown-content, .about-dropdown-content').forEach(d => d.style.display = 'none');
+        }
+      });
+      document.querySelectorAll('.about-dropdown-content a, .dropdown-content a').forEach(link => {
+        link.addEventListener('click', function() {
+          document.querySelectorAll('.dropdown-content, .about-dropdown-content').forEach(d => d.style.display = 'none');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Bsecurity</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-nav">
+      <div class="logo">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+          <defs>
+            <linearGradient id="shieldGradient" x1="0" y1="0" x2="0" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#2196f3"/>
+              <stop offset="1" stop-color="#1565c0"/>
+            </linearGradient>
+          </defs>
+          <path d="M40 7L70 17V37C70 57 40 73 40 73C40 73 10 57 10 37V17L40 7Z" fill="url(#shieldGradient)"/>
+          <rect x="28" y="38" width="24" height="18" rx="5" fill="#fff"/>
+          <rect x="33" y="31" width="14" height="10" rx="5" fill="none" stroke="#fff" stroke-width="3"/>
+          <circle cx="40" cy="47" r="2" fill="#2196f3"/>
+        </svg>
+        <span class="brand">Bsecurity</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Courses</a>
+          <div class="dropdown-content">
+            <a href="HTML.html">HTML Course (Free)</a>
+            <a href="CSS.html">CSS Course (Free)</a>
+            <a href="https://baskapella.blogspot.com">Ethical Hacking Blog</a>
+          </div>
+        </li>
+        <li class="about-dropdown">
+          <a href="about.html">About Us</a>
+          <div class="about-dropdown-content">
+            <a href="team.html">Our Team</a>
+            <a href="who.html">Who We Are</a>
+          </div>
+        </li>
+        <li><a href="demo.html">Demo</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form" action="mailto:your@email.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required /><br>
+      <input type="email" name="email" placeholder="Your Email" required /><br>
+      <textarea name="message" placeholder="Your Message" required></textarea><br>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+    <div class="contact-icons">
+      <a href="mailto:your@email.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/2348100000000" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.linkedin.com/in/your-linkedin" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Bsecurity. All rights reserved.</p>
+  </footer>
+  <script>
+    // Dropdowns stay open until you click elsewhere
+    document.addEventListener('DOMContentLoaded', function() {
+      function setupDropdown(btnSelector, dropdownClass) {
+        document.querySelectorAll(btnSelector).forEach(btn => {
+          const dropdown = btn.nextElementSibling;
+          btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const isOpen = dropdown.style.display === 'block';
+            document.querySelectorAll('.dropdown-content, .about-dropdown-content').forEach(d => d.style.display = 'none');
+            dropdown.style.display = isOpen ? 'none' : 'block';
+          });
+        });
+      }
+      setupDropdown('.dropdown > a', 'dropdown-content');
+      setupDropdown('.about-dropdown > a', 'about-dropdown-content');
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown') && !e.target.closest('.about-dropdown')) {
+          document.querySelectorAll('.dropdown-content, .about-dropdown-content').forEach(d => d.style.display = 'none');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
