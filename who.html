@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Who We Are | Bsecurity</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-nav">
+      <div class="logo">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+          <defs>
+            <linearGradient id="shieldGradient" x1="0" y1="0" x2="0" y2="80" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#2196f3"/>
+              <stop offset="1" stop-color="#1565c0"/>
+            </linearGradient>
+          </defs>
+          <path d="M40 7L70 17V37C70 57 40 73 40 73C40 73 10 57 10 37V17L40 7Z" fill="url(#shieldGradient)"/>
+          <rect x="28" y="38" width="24" height="18" rx="5" fill="#fff"/>
+          <rect x="33" y="31" width="14" height="10" rx="5" fill="none" stroke="#fff" stroke-width="3"/>
+          <circle cx="40" cy="47" r="2" fill="#2196f3"/>
+        </svg>
+        <span class="brand">Bsecurity</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#">Courses</a>
+          <div class="dropdown-content">
+            <a href="HTML.html">HTML Course (Free)</a>
+            <a href="CSS.html">CSS Course (Free)</a>
+            <a href="https://baskapella.blogspot.com">Ethical Hacking Blog</a>
+          </div>
+        </li>
+        <li class="about-dropdown">
+          <a href="about.html">About Us</a>
+          <div class="about-dropdown-content">
+            <a href="team.html">Our Team</a>
+            <a href="who.html" class="active">Who We Are</a>
+          </div>
+        </li>
+        <li><a href="demo.html">Demo</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+  <section class="about-hero">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=900&q=80" alt="Who We Are" class="about-hero-img"/>
+    <h1 class="about-title">Who <span style="color:#00BFFF;">We Are</span></h1>
+  </section>
+  <section class="about-writeup">
+    <h2>Who We Are</h2>
+    <p>
+      Bsecurity is a forward-thinking cybersecurity and IT solutions provider dedicated to empowering individuals and businesses with the knowledge and tools needed to thrive in the digital world. Our mission is to make cybersecurity and IT education accessible, practical, and effective for everyone.
+    </p>
+    <p>
+      We believe in hands-on learning, real-world problem solving, and building a community of passionate learners and professionals. Whether you're a beginner or an experienced tech enthusiast, Bsecurity is your trusted partner for growth and digital security.
+    </p>
+    <div class="about-gallery">
+      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Team"/>
+      <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=400&q=80" alt="Learning"/>
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Growth"/>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 Bsecurity. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function setupDropdown(btnSelector) {
+        document.querySelectorAll(btnSelector).forEach(btn => {
+          const dropdown = btn.nextElementSibling;
+          btn.addEventListener('click', function(e) {
+            const isOpen = dropdown.style.display === 'block';
+            if (!isOpen) {
+              e.preventDefault();
+              document.querySelectorAll('.dropdown-content, .about-dropdown-content').forEach(d => d.style.display = 'none');
+              dropdown.style.display = 'block';
+            }
+          });
+        });
+      }
+      setupDropdown('.dropdown > a');
+      setupDropdown('.about-dropdown > a');
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown') && !e.target.closest('.about-dropdown')) {
+          document.querySelectorAll('.dropdown-content, .about-dropdown-content').forEach(d => d.style.display = 'none');
+        }
+      });
+      document.querySelectorAll('.about-dropdown-content a, .dropdown-content a').forEach(link => {
+        link.addEventListener('click', function() {
+          document.querySelectorAll('.dropdown-content, .about-dropdown-content').forEach(d => d.style.display = 'none');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

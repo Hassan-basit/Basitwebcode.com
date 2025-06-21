@@ -1,98 +1,166 @@
-.greentext{
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(0, 128, 128);
-    background-color: yellow; 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* styling flexbox */
-#flexbox-demo-bg{
-    background-color: purple;
-    color: white;
+body {
+  line-height: 1.6;
+  background-color: #f4f8fc;
+  color: #333;
 }
 
-.flex-container{
-    display: flex;
-    flex-wrap: nowrap;
-    background-color: pink;
-}
-
-.flex-item{
-    background-color: blue;
-    width: 600px;
-    margin: 10px;
-    text-align: center;
-    line-height: 75px;
-    font-size: 70px;
-}
-img{
-    float: right;    
-}
-.icon-bar {
-  width: 100%; /* Full-width */
-  background-color: purple; /* Dark-grey background */
-  overflow: auto; /* Overflow due to float */
-}
-
-.icon-bar a {
-  float: left; /* Float links side by side */
-  text-align: center; /* Center-align text */
-  width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
-  padding: 12px 0; /* Some top and bottom padding */
-  transition: all 0.3s ease; /* Add transition for hover effects */
-  color: white; /* White text color */
-  font-size: 36px; /* Increased font size */
-}
-
-.icon-bar a:hover {
-  background-color: black; /* Add a hover color */
-}
-
-.active {
-  background-color: #04AA6D; /* Add an active/current color */
-}
-/* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */ 
-  border: 1px solid #ccc; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-}
-.text{
-  width: 90%;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%);
-  text-align: center;
-}
-.content{
-  text-align: right;
-}
-/* Style the submit button with a specific background color etc */
-input[type=submit] {
-  background-color: #04AA6D;
+header {
+  background: #0a3d62;
   color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 9px;
-  cursor:pointer;
+  padding-bottom: 20px;
 }
 
-/* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover {
-  background-color: #45a049;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #0a3d62;
 }
 
-/* Add a background color and some padding around the form */
-.container {
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #1abc9c;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  color: #0a3d62;
+  min-width: 150px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #0a3d62;
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: #dff9fb;
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #1abc9c;
+  color: white;
+  text-decoration: none;
   border-radius: 5px;
-  background-color: purple;
-  
-  padding: 20px;
+  transition: background 0.3s ease;
 }
 
+.btn-primary:hover {
+  background: #16a085;
+}
 
+section {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0a3d62;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+.feature-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.feature {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+footer {
+  text-align: center;
+  background: #0a3d62;
+  color: white;
+  padding: 1.5rem;
+  margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .feature-box {
+    flex-direction: column;
+    align-items: center;
+  }
+}
